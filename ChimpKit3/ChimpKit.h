@@ -43,6 +43,7 @@ typedef void (^ChimpKitRequestCompletionBlock)(NSURLResponse *response, NSData *
 
 // Returns unique identifier for each request
 - (NSUInteger)callApiMethod:(NSString *)aMethod
+                 HTTPMethod: (NSString *)anHTTPMethod
 				 withParams:(NSDictionary *)someParams
 	   andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler;
 
@@ -53,6 +54,7 @@ typedef void (^ChimpKitRequestCompletionBlock)(NSURLResponse *response, NSData *
 // If these methods are called with a nil apikey, ChimpKit falls back to
 // using the global apikey
 - (NSUInteger)callApiMethod:(NSString *)aMethod
+                 HTTPMethod: (NSString *)anHTTPMethod
 				 withApiKey:(NSString *)anApiKey
 					 params:(NSDictionary *)someParams
 	   andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler;
