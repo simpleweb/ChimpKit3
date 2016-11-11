@@ -48,6 +48,7 @@ typedef void (^ChimpKitRequestCompletionBlock)(NSURLResponse *response, NSData *
 	   andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler;
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod
+				 HTTPMethod: (NSString *)anHTTPMethod
 				 withParams:(NSDictionary *)someParams
 				andDelegate:(id<ChimpKitRequestDelegate>)aDelegate;
 
@@ -60,6 +61,7 @@ typedef void (^ChimpKitRequestCompletionBlock)(NSURLResponse *response, NSData *
 	   andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler;
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod
+				HTTPMethod: (NSString *)anHTTPMethod
 				 withApiKey:(NSString *)anApiKey
 					 params:(NSDictionary *)someParams
 				andDelegate:(id<ChimpKitRequestDelegate>)aDelegate;

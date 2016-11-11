@@ -95,24 +95,24 @@
     return [self callApiMethod:aMethod HTTPMethod:anHTTPMethod withApiKey:nil params:someParams andCompletionHandler:aHandler];
 }
 
-- (NSUInteger)callApiMethod:(NSString *)aMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler {
+- (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler {
 	if (aHandler == nil) {
 		return 0;
 	}
 
-	return [self callApiMethod:aMethod HTTPMethod:nil withApiKey:anApiKey params:someParams andCompletionHandler:aHandler orDelegate:nil];
+	return [self callApiMethod:aMethod HTTPMethod:anHTTPMethod withApiKey:anApiKey params:someParams andCompletionHandler:aHandler orDelegate:nil];
 }
 
-- (NSUInteger)callApiMethod:(NSString *)aMethod withParams:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
-    return [self callApiMethod:aMethod withApiKey:nil params:someParams andDelegate:aDelegate];
+- (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withParams:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
+    return [self callApiMethod:aMethod  HTTPMethod:anHTTPMethod withApiKey:someParams params:someParams andDelegate:aDelegate];
 }
 
-- (NSUInteger)callApiMethod:(NSString *)aMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
+- (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
 	if (aDelegate == nil) {
 		return 0;
 	}
 
-	return [self callApiMethod:aMethod HTTPMethod:nil withApiKey:anApiKey params:someParams andCompletionHandler:nil orDelegate:aDelegate];
+	return [self callApiMethod:aMethod HTTPMethod:anHTTPMethod withApiKey:anApiKey params:someParams andCompletionHandler:nil orDelegate:aDelegate];
 }
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler orDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
