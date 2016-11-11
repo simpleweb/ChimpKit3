@@ -90,8 +90,7 @@
 
 #pragma mark - API Methods
 
-- (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod
- withParams:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler {
+- (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withParams:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler {
     return [self callApiMethod:aMethod HTTPMethod:anHTTPMethod withApiKey:nil params:someParams andCompletionHandler:aHandler];
 }
 
@@ -104,7 +103,7 @@
 }
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withParams:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
-    return [self callApiMethod:aMethod  HTTPMethod:anHTTPMethod withApiKey:someParams params:someParams andDelegate:aDelegate];
+    return [self callApiMethod:aMethod  HTTPMethod:anHTTPMethod withApiKey:nil params:someParams andDelegate:aDelegate];
 }
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
