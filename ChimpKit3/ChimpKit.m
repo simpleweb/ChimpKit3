@@ -100,7 +100,7 @@
 		return 0;
 	}
 
-	return [self callApiMethod:aMethod withApiKey:anApiKey params:someParams andCompletionHandler:aHandler orDelegate:nil];
+	return [self callApiMethod:aMethod HTTPMethod:nil withApiKey:anApiKey params:someParams andCompletionHandler:aHandler orDelegate:nil];
 }
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod withParams:(NSDictionary *)someParams andDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
@@ -112,7 +112,7 @@
 		return 0;
 	}
 
-	return [self callApiMethod:aMethod withApiKey:anApiKey params:someParams andCompletionHandler:nil orDelegate:aDelegate];
+	return [self callApiMethod:aMethod HTTPMethod:nil withApiKey:anApiKey params:someParams andCompletionHandler:nil orDelegate:aDelegate];
 }
 
 - (NSUInteger)callApiMethod:(NSString *)aMethod HTTPMethod: (NSString *)anHTTPMethod withApiKey:(NSString *)anApiKey params:(NSDictionary *)someParams andCompletionHandler:(ChimpKitRequestCompletionBlock)aHandler orDelegate:(id<ChimpKitRequestDelegate>)aDelegate {
